@@ -1,8 +1,8 @@
 import requests
 import json
 
-#returns a general forecast for every 12-hour period specified (maximum of 14 periods)
-def forecaster(coordinates: list, periods: int) -> str:
+#returns a big list of general forecast data for 12-hour long periods
+def forecaster(coordinates: list) -> list:
     
     lat = coordinates[0]
     lon = coordinates[1]
@@ -13,16 +13,20 @@ def forecaster(coordinates: list, periods: int) -> str:
     link1 = responseObject.json()['properties']["forecast"]
 
     forecastData = requests.get(link1).json()['properties']['periods']
+    
+    return forecastData
 
-    index = 0
+#Returns a specified type of weather data over a specified number of 12 hour periods, maximum 14
+def forecasterr(forecastData: list, periods: int, weatherdataType: str) -> list:
+    
     generalForecasts = []
-
+    index = 0
     while index < periods:
             
-        detailedForecast = forecastData[index]['detailedForecast']
+        detailedForecast = forecastData[index][weatherdataType]
 
         generalForecasts.append(detailedForecast)
         index += 1
         
-    forecast = (" ".join(generalForecasts))
-    return forecast
+
+    return generalForecasts
