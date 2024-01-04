@@ -1,1 +1,4 @@
-now hourly and forecaster act as one, by taking a string parameter to decide on the data type. I need to make a list of all the possible parameters (or atleast useful ones).
+Having a dedicated hourly writing option works... 
+I want to get rid of all the time function stuff and use the data provided by the api to get accurate times.
+
+I cannot tell if it always starts at 12 or an hour prior when viewing the big hourly forecast data (cat).
