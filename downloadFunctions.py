@@ -1,10 +1,13 @@
 import requests
 import json
 
-def forecaster(coordinates: list) -> str:
+#returns a general forecast for every 12-hour period specified (maximum of 14 periods)
+def forecaster(coordinates: list, periods: int) -> str:
+    
     lat = coordinates[0]
     lon = coordinates[1]
-    #naptown (38.99 lat, -76.49 lon)
+  
+
     responseObject = requests.get(f"https://api.weather.gov/points/{lat},{lon}")
 
     link1 = responseObject.json()['properties']["forecast"]
@@ -14,10 +17,9 @@ def forecaster(coordinates: list) -> str:
     index = 0
     generalForecasts = []
 
-    while index != 2:
-        current = forecastData[index]
+    while index < periods:
             
-        detailedForecast = current['detailedForecast']
+        detailedForecast = forecastData[index]['detailedForecast']
 
         generalForecasts.append(detailedForecast)
         index += 1
