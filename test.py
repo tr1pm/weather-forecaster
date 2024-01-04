@@ -9,9 +9,9 @@ cat = downloadFunctions.forecaster([38.99,-76.49], "forecastHourly")
 
 weatherdata = downloadFunctions.forecasterr(cat, 12, 'temperature')
 
-frog = downloadFunctions.timewriter(weatherdata)
+times = downloadFunctions.forecasterr(cat, 12, 'startTime') 
 
 
-print(frog)
+stag = downloadFunctions.timeWriter2(times, weatherdata)
 
 print(1)
