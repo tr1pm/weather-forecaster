@@ -93,12 +93,12 @@ def timewriter(forecasts: list) -> list:
         index += 1
     return hourlystuff
     
-def timeWriter2 (times: list, data1: list = [], data2: list = []):
+def timeWriter2 (times: list, data1: list, units: str):
 
     writtenTimes = []
     index = 0
     while index < len(times):
-        tempstring = f"{times[index]}: {data1[index]}"
+        tempstring = f"{times[index][11:16]}: {data1[index]} {units}"
         writtenTimes.append(tempstring)
         index += 1
     return writtenTimes
