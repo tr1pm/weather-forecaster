@@ -1,8 +1,8 @@
 import requests
 import json
 
-#returns a big list of general forecast data for 12 or 1 hour long periods
-def forecaster(coordinates: list, dataType: str) -> list:
+#downloads a large list of general forecast data for 12 or 1 hour long periods
+def downloadData(coordinates: list, dataType: str) -> list:
     
     lat = coordinates[0]
     lon = coordinates[1]
@@ -15,8 +15,8 @@ def forecaster(coordinates: list, dataType: str) -> list:
     
     return forecastData
 
-#Returns a specified type of weather data over a specified number of 1 or 12 hour periods
-def forecasterr(forecastData: list, periods: int, weatherdataType: str) -> list:
+#returns a specified type of weather data over a specified number of 1 or 12 hour periods
+def sortData(forecastData: list, periods: int, weatherdataType: str) -> list:
     
     generalForecasts = []
     index = 0
@@ -30,13 +30,13 @@ def forecasterr(forecastData: list, periods: int, weatherdataType: str) -> list:
     return generalForecasts
 
 
-#returns a 
-def timeWriter (times: list, data1: list, units: str = ""):
+#returns a list of forecast data associated with certain times.
+def writeTime(times: list, dataType: list, units: str = "") -> list:
 
     writtenTimes = []
     index = 0
     while index < len(times):
-        tempstring = f"{times[index][11:16]}: {data1[index]} {units}"
+        tempstring = f"{times[index][11:16]}: {dataType[index]} {units}"
         writtenTimes.append(tempstring)
         index += 1
     return writtenTimes
