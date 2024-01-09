@@ -39,7 +39,7 @@ coordinates = []
 "temperature"
 "temperatureUnit"
 "temperatureTrend"
-"probabilityOfPrecipitation"{
+"probabilityOfPrecipitation": {
     "unitCode": "wmoUnit:percent",
     "value": null}
 
