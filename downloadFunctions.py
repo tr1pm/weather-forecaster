@@ -38,6 +38,7 @@ def getRain(rainData: list, periods: int) -> list:
         
         rainForecasts.append(rainData[index]['value'])
         index += 1
+        
     return rainForecasts
 
 def getHumidity(humidityData: list, periods: int) -> list:
@@ -50,8 +51,6 @@ def getHumidity(humidityData: list, periods: int) -> list:
     return humidityForecasts
 
 
-
-
 def getDewpoint(dewData: list, periods: int) -> list:
     dewForecasts = []
     index = 0 
@@ -60,6 +59,7 @@ def getDewpoint(dewData: list, periods: int) -> list:
         dewForecasts.append(dewData[index]['value'])
         index += 1
     return dewForecasts
+
 
 #returns a list of forecast data associated with certain times.
 def writeTime(times: list, dataType: list, units: str = "") -> list:
