@@ -30,6 +30,16 @@ def sortData(forecastData: list, periods: int, weatherdataType: str) -> list:
     return generalForecasts
 
 
+def getRain(rainData: list, periods: int) -> list:
+
+    rainForecasts = []
+    index = 0 
+    while index < periods:
+        
+        rainForecasts.append(rainData[index]['value'])
+        index += 1
+    return rainForecasts
+
 #returns a list of forecast data associated with certain times.
 def writeTime(times: list, dataType: list, units: str = "") -> list:
 
