@@ -20,3 +20,4 @@ clam = downloadFunctions.getDewpoint(weatherdata3, 12)
 toucan = downloadFunctions.getHumidity(weatherdata4, 12)
 
 print(1)
+print(2)
