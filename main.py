@@ -27,3 +27,22 @@ while i < len(args.dataTypes):
     i += 1
 print()
 print("Make as many selections as you want by entering a number and hitting enter. A blank entry indicates you are done.")
+
+#Working loop for entering the different types of desired forecast data. Needs work
+DataTypeList = []
+isloopActive = True
+while isloopActive == True:
+    x = input("Enter a number = ")
+
+    if x == "":
+        break
+    
+    if x.isdigit():
+        x = int(x)
+        
+        if 0 <= x <= 13:
+            DataTypeList.append(x)
+        else:
+            print("Please make a valid entry")
+    else:
+        print("Please make a valid entry")
