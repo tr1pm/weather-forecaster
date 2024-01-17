@@ -1,6 +1,9 @@
 #used for downloadData
 #Gotta have a set of cooridnates
 coordinates = []
+
+
+
 b1 = "forecast"
 b2 = "forecastHourly"
 
