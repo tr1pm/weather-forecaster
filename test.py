@@ -21,3 +21,11 @@ toucan = downloadFunctions.getHumidity(weatherdata4, 12)
 
 print(1)
 print(2)
+
+
+forecastData = downloadFunctions.downloadData([38.99,-76.49], "forecast")
+detailedForecasts = downloadFunctions.sortData(forecastData, 2, "detailedForecast")
+
+
+HourlyForecastData = downloadFunctions.downloadData([38.99,-76.49], "forecastHourly")
+
