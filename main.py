@@ -1,13 +1,14 @@
 import args
 import downloadFunctions
 
-def main():
+def use_console():
     print("Welcome to weather forecaster.")
 
     print()
 
     print("Before we start, please enter a set of coordinates: ")
     xCoordinate = float(input("x coordinates: "))
+
     yCoordinate = float(input("y coordinates: "))
     coordinates = [xCoordinate, yCoordinate]
 
@@ -47,3 +48,5 @@ def main():
         else:
             print("Please make a valid entry")
 
+
+    return coordinates, ForecastTypeChoice, RequestedDataTypes
