@@ -8,7 +8,6 @@ def use_console():
 
     print("Before we start, please enter a set of coordinates: ")
     xCoordinate = float(input("x coordinates: "))
-
     yCoordinate = float(input("y coordinates: "))
     coordinates = [xCoordinate, yCoordinate]
 

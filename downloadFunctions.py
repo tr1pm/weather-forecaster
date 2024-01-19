@@ -1,5 +1,7 @@
 import requests
 import json
+import args
+
 
 #downloads a large list of general forecast data for 12 or 1 hour long periods
 def downloadData(coordinates: list, dataType: str) -> list:
@@ -15,18 +17,25 @@ def downloadData(coordinates: list, dataType: str) -> list:
     
     return forecastData
 
-#returns a specified type of weather data over a specified number of 1 or 12 hour periods
-def sortData(forecastData: list, periods: int, weatherdataType: str) -> list:
+#returns specified types of weather data over a specified number of 1 or 12 hour periods
+def sortData(forecastData: list, periods: int, dataTypes: list) -> list:
     
-    generalForecasts = []
-    index = 0
-    while index < periods:
-            
-        detailedForecast = forecastData[index][weatherdataType]
+    x = 0
+    allTheForecasts = []
+    while x < len(dataTypes):
 
-        generalForecasts.append(detailedForecast)
-        index += 1
+        generalForecasts = []
+        WeatherDataType = args.dataTypes[dataTypes[x]]
+        index = 0
+        while index < periods:
+                
+            detailedForecast = forecastData[index][WeatherDataType]
+
+            generalForecasts.append(detailedForecast)
+            index += 1
         
+        allTheForecasts.append(generalForecasts)
+        x += 1    
     return generalForecasts
 
 
